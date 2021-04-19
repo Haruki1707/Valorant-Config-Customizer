@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valorant Config Customizer", "Valorant Config Customizer\Valorant Config Customizer.csproj", "{C37E320B-0684-49B1-8B54-C7337E7D7197}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C37E320B-0684-49B1-8B54-C7337E7D7197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37E320B-0684-49B1-8B54-C7337E7D7197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37E320B-0684-49B1-8B54-C7337E7D7197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37E320B-0684-49B1-8B54-C7337E7D7197}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E464E3E3-8EF6-4346-80FB-554606C992C7}
+	EndGlobalSection
+EndGlobal
