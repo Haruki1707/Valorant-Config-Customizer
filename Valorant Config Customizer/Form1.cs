@@ -72,6 +72,14 @@ namespace Valorant_Config_Customizer
         private void SCbtn_Click(object sender, EventArgs e)
         {
             string GUSini = ConfigPath + @"GameUserSettings.ini";
+            foreach (var control in this.Controls)
+            {
+                if(control is TextBox)
+                {
+                    if (string.IsNullOrWhiteSpace(((TextBox)control).Text))
+                        ((TextBox)control).Text = "0";
+                }
+            }
             try
             {
                 File.SetAttributes(GUSini, File.GetAttributes(GUSini) & ~FileAttributes.ReadOnly);
@@ -101,6 +109,8 @@ namespace Valorant_Config_Customizer
 
             int value = 0;
             int.TryParse(ResQuaTxtbox.Text, out value);
+            if (value < 1 && ResQuaTxtbox.Text != "")
+                ResQuaTxtbox.Text = "1";
             if (value > 100)
                 ResQuaTxtbox.Text = "100";
 
