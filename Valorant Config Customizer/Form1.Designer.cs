@@ -53,10 +53,12 @@ namespace Valorant_Config_Customizer
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.InfoBtn = new System.Windows.Forms.Button();
             this.miniBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -348,6 +350,7 @@ namespace Valorant_Config_Customizer
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
+            this.panel2.Controls.Add(this.InfoBtn);
             this.panel2.Controls.Add(this.miniBtn);
             this.panel2.Controls.Add(this.closeBtn);
             this.panel2.Controls.Add(this.label11);
@@ -357,6 +360,25 @@ namespace Valorant_Config_Customizer
             this.panel2.Size = new System.Drawing.Size(800, 51);
             this.panel2.TabIndex = 13;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDisp_MouseDown);
+            // 
+            // InfoBtn
+            // 
+            this.InfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(27)))));
+            this.InfoBtn.BackgroundImage = global::Valorant_Config_Customizer.Properties.Resources.infobtn1;
+            this.InfoBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.InfoBtn.FlatAppearance.BorderSize = 0;
+            this.InfoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.InfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InfoBtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.InfoBtn.Location = new System.Drawing.Point(677, 7);
+            this.InfoBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.InfoBtn.Name = "InfoBtn";
+            this.InfoBtn.Size = new System.Drawing.Size(35, 35);
+            this.InfoBtn.TabIndex = 3;
+            this.InfoBtn.TabStop = false;
+            this.InfoBtn.UseVisualStyleBackColor = false;
+            this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
             // 
             // miniBtn
             // 
@@ -420,12 +442,27 @@ namespace Valorant_Config_Customizer
             this.label12.TabIndex = 0;
             this.label12.Text = "%";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(0, 62);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(800, 24);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "To see examples of different Resolution Quality percentages click this link";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -492,6 +529,8 @@ namespace Valorant_Config_Customizer
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button InfoBtn;
     }
 }
 

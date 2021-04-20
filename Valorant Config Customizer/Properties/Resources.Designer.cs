@@ -73,6 +73,26 @@ namespace Valorant_Config_Customizer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infobtn {
+            get {
+                object obj = ResourceManager.GetObject("infobtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infobtn1 {
+            get {
+                object obj = ResourceManager.GetObject("infobtn1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizebtn {
             get {
                 object obj = ResourceManager.GetObject("minimizebtn", resourceCulture);

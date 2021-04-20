@@ -63,7 +63,7 @@ namespace Valorant_Config_Customizer
             }
             catch (Exception e)
             {
-                var result = MessageBox.Show(e + "\n\nClosing program");
+                var result = Error(e + "\n\nClosing program");
                 if (result == DialogResult.OK)
                     Environment.Exit(0);
             }
@@ -76,11 +76,11 @@ namespace Valorant_Config_Customizer
             {
                 File.SetAttributes(GUSini, File.GetAttributes(GUSini) & ~FileAttributes.ReadOnly);
                 File.WriteAllLines(GUSini, GUSlines);
-                MessageBox.Show("GameUserConfig.ini successfully modified");
+                Success("GameUserConfig.ini successfully modified");
             }
             catch (Exception)
             {
-                MessageBox.Show("Error modifying GameUserConfig.ini");
+                Error("Error modifying GameUserConfig.ini");
             }
             try
             {
@@ -89,7 +89,7 @@ namespace Valorant_Config_Customizer
             }
             catch (Exception)
             {
-                MessageBox.Show("Error making file ReadOnly");
+                Error("Error making file ReadOnly");
             }
         }
 
@@ -205,6 +205,35 @@ namespace Valorant_Config_Customizer
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Info(string message)
+        {
+            var info = new MessageForm(message, 0);
+            info.ShowDialog();
+        }
+        private DialogResult Error(string message)
+        {
+            var error = new MessageForm(message, 1);
+            error.ShowDialog();
+            return DialogResult.OK;
+        }
+        private DialogResult Success(string message)
+        {
+            var success = new MessageForm(message, 2);
+            success.ShowDialog();
+
+            return success.dialogResult;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Haruki1707/Valorant-Config-Customizer/wiki/Resolution-Quality-1%25---100%25");
+        }
+
+        private void InfoBtn_Click(object sender, EventArgs e)
+        {
+            Info("Tested on: Valorant  V2.07\n\nDeveloped by: Haruki1707\nGitHub: github.com/Haruki1707");
         }
     }
 }
