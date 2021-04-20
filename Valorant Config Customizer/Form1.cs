@@ -76,7 +76,7 @@ namespace Valorant_Config_Customizer
             {
                 File.SetAttributes(GUSini, File.GetAttributes(GUSini) & ~FileAttributes.ReadOnly);
                 File.WriteAllLines(GUSini, GUSlines);
-                Success("GameUserConfig.ini successfully modified");
+                Success("GameUserConfig.ini successfully modified", true);
             }
             catch (Exception)
             {
@@ -218,9 +218,13 @@ namespace Valorant_Config_Customizer
             error.ShowDialog();
             return DialogResult.OK;
         }
-        private DialogResult Success(string message)
+        private DialogResult Success(string message, bool OK = false)
         {
-            var success = new MessageForm(message, 2);
+            MessageForm success;
+            if (!OK)
+                success = new MessageForm(message, 2);
+            else
+                success = new MessageForm(message, 3);
             success.ShowDialog();
 
             return success.dialogResult;

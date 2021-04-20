@@ -42,6 +42,11 @@ namespace Valorant_Config_Customizer
                     OKbtn.Hide();
                     iconPB.Image = System.Drawing.SystemIcons.Information.ToBitmap();
                     break;
+                case 3:
+                    YESbtn.Hide();
+                    NObtn.Hide();
+                    iconPB.Image = System.Drawing.SystemIcons.Information.ToBitmap();
+                    break;
                 default:
                     break;
             }
