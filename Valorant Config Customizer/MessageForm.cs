@@ -75,7 +75,7 @@ namespace Valorant_Config_Customizer
 
         protected override void OnPaint(PaintEventArgs pea)
         {
-            Pen pen = new Pen(Color.FromArgb(15, 19, 26), 10);
+            Pen pen = new Pen(Color.FromArgb(13, 17, 23), 10);
 
             PointF pt1 = new PointF(0, 0);
             PointF pt2 = new PointF(0, Height);

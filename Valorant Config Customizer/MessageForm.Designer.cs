@@ -62,7 +62,7 @@ namespace Valorant_Config_Customizer
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
             this.panel1.Controls.Add(this.NObtn);
             this.panel1.Controls.Add(this.YESbtn);
             this.panel1.Controls.Add(this.OKbtn);

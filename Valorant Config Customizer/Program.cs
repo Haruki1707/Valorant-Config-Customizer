@@ -20,22 +20,20 @@ namespace Valorant_Config_Customizer
             Application.Run(new Form1());
         }
 
-        public static void ToDraw(Control.ControlCollection control, PaintEventArgs g)
+        public static void ToDraw(TextBox txtbox, Graphics g, int LineWidth = 3, Color? color = null, int Ymove = 0, int Xmove = 0)
         {
-            var color = Color.White;
-            Pen pen = new Pen(color, 3);
-            foreach (Control current in control)
-            {
-                if (current is TextBox)
-                {
-                    ((TextBox)current).BorderStyle = BorderStyle.None;
-                    var LX = current.Location.X;
-                    var W = current.Width;
-                    var Y = current.Location.Y + current.Height;
+            if (color == null)
+                color = Color.White;
+            if (LineWidth == 1)
+                Xmove = -1;
+            Pen pen = new Pen((Color)color, LineWidth);
+            txtbox.BorderStyle = BorderStyle.None;
+            var LX = txtbox.Location.X;
+            var W = txtbox.Width + Xmove;
+            var Y = txtbox.Location.Y + txtbox.Height + Ymove;
 
-                    g.Graphics.DrawLine(pen, new PointF(LX, Y), new PointF(LX + W, Y));
-                }
-            }
+            g.DrawLine(pen, new PointF(LX, Y), new PointF(LX + W, Y));
+            g.Dispose();
             pen.Dispose();
         }
     }

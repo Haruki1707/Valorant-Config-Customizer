@@ -71,23 +71,25 @@ namespace Valorant_Config_Customizer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Resolution Quality (0% - 100%)";
+            this.label1.Text = "Resolution Quality (1% - 100%)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ResQuaTxtbox
             // 
             this.ResQuaTxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.ResQuaTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ResQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResQuaTxtbox.ForeColor = System.Drawing.SystemColors.Control;
-            this.ResQuaTxtbox.Location = new System.Drawing.Point(69, 146);
+            this.ResQuaTxtbox.Location = new System.Drawing.Point(69, 145);
             this.ResQuaTxtbox.MaxLength = 3;
             this.ResQuaTxtbox.Name = "ResQuaTxtbox";
-            this.ResQuaTxtbox.Size = new System.Drawing.Size(92, 25);
+            this.ResQuaTxtbox.Size = new System.Drawing.Size(92, 27);
             this.ResQuaTxtbox.TabIndex = 1;
             this.ResQuaTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ResQuaTxtbox.TextChanged += new System.EventHandler(this.ResQuaTxtbox_TextChanged);
+            this.ResQuaTxtbox.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.ResQuaTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ResQuaTxtbox_KeyPress);
+            this.ResQuaTxtbox.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // SCbtn
             // 
@@ -108,16 +110,18 @@ namespace Valorant_Config_Customizer
             // 
             this.VDQuaTxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.VDQuaTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VDQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VDQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VDQuaTxtbox.ForeColor = System.Drawing.SystemColors.Control;
-            this.VDQuaTxtbox.Location = new System.Drawing.Point(363, 145);
+            this.VDQuaTxtbox.Location = new System.Drawing.Point(363, 144);
             this.VDQuaTxtbox.MaxLength = 1;
             this.VDQuaTxtbox.Name = "VDQuaTxtbox";
-            this.VDQuaTxtbox.Size = new System.Drawing.Size(92, 25);
+            this.VDQuaTxtbox.Size = new System.Drawing.Size(92, 27);
             this.VDQuaTxtbox.TabIndex = 2;
             this.VDQuaTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.VDQuaTxtbox.TextChanged += new System.EventHandler(this.VDQuaTxtbox_TextChanged);
+            this.VDQuaTxtbox.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.VDQuaTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.VDQuaTxtbox.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label2
             // 
@@ -134,16 +138,18 @@ namespace Valorant_Config_Customizer
             // 
             this.AAQuaTxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.AAQuaTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AAQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AAQuaTxtbox.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AAQuaTxtbox.ForeColor = System.Drawing.SystemColors.Control;
-            this.AAQuaTxtbox.Location = new System.Drawing.Point(653, 146);
+            this.AAQuaTxtbox.Location = new System.Drawing.Point(653, 145);
             this.AAQuaTxtbox.MaxLength = 1;
             this.AAQuaTxtbox.Name = "AAQuaTxtbox";
-            this.AAQuaTxtbox.Size = new System.Drawing.Size(92, 25);
+            this.AAQuaTxtbox.Size = new System.Drawing.Size(92, 27);
             this.AAQuaTxtbox.TabIndex = 3;
             this.AAQuaTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AAQuaTxtbox.TextChanged += new System.EventHandler(this.AAQuaTxtbox_TextChanged);
+            this.AAQuaTxtbox.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.AAQuaTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.AAQuaTxtbox.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label3
             // 
@@ -160,16 +166,18 @@ namespace Valorant_Config_Customizer
             // 
             this.ShadowQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.ShadowQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ShadowQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShadowQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShadowQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.ShadowQuaTxtbtn.Location = new System.Drawing.Point(69, 243);
+            this.ShadowQuaTxtbtn.Location = new System.Drawing.Point(69, 242);
             this.ShadowQuaTxtbtn.MaxLength = 1;
             this.ShadowQuaTxtbtn.Name = "ShadowQuaTxtbtn";
-            this.ShadowQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.ShadowQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.ShadowQuaTxtbtn.TabIndex = 4;
             this.ShadowQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ShadowQuaTxtbtn.TextChanged += new System.EventHandler(this.ShadowQuaTxtbtn_TextChanged);
+            this.ShadowQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.ShadowQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.ShadowQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label4
             // 
@@ -186,16 +194,18 @@ namespace Valorant_Config_Customizer
             // 
             this.PPQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.PPQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PPQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PPQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PPQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.PPQuaTxtbtn.Location = new System.Drawing.Point(363, 243);
+            this.PPQuaTxtbtn.Location = new System.Drawing.Point(363, 242);
             this.PPQuaTxtbtn.MaxLength = 1;
             this.PPQuaTxtbtn.Name = "PPQuaTxtbtn";
-            this.PPQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.PPQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.PPQuaTxtbtn.TabIndex = 5;
             this.PPQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PPQuaTxtbtn.TextChanged += new System.EventHandler(this.PPQuaTxtbtn_TextChanged);
+            this.PPQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.PPQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.PPQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label5
             // 
@@ -212,16 +222,18 @@ namespace Valorant_Config_Customizer
             // 
             this.TexQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.TexQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TexQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TexQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TexQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.TexQuaTxtbtn.Location = new System.Drawing.Point(653, 243);
+            this.TexQuaTxtbtn.Location = new System.Drawing.Point(653, 242);
             this.TexQuaTxtbtn.MaxLength = 1;
             this.TexQuaTxtbtn.Name = "TexQuaTxtbtn";
-            this.TexQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.TexQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.TexQuaTxtbtn.TabIndex = 6;
             this.TexQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TexQuaTxtbtn.TextChanged += new System.EventHandler(this.TexQuaTxtbtn_TextChanged);
+            this.TexQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.TexQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToTwo_KeyPress);
+            this.TexQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label6
             // 
@@ -238,16 +250,18 @@ namespace Valorant_Config_Customizer
             // 
             this.EffectsQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.EffectsQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EffectsQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EffectsQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EffectsQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.EffectsQuaTxtbtn.Location = new System.Drawing.Point(69, 339);
+            this.EffectsQuaTxtbtn.Location = new System.Drawing.Point(69, 338);
             this.EffectsQuaTxtbtn.MaxLength = 1;
             this.EffectsQuaTxtbtn.Name = "EffectsQuaTxtbtn";
-            this.EffectsQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.EffectsQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.EffectsQuaTxtbtn.TabIndex = 7;
             this.EffectsQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.EffectsQuaTxtbtn.TextChanged += new System.EventHandler(this.EffectsQuaTxtbtn_TextChanged);
+            this.EffectsQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.EffectsQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.EffectsQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label7
             // 
@@ -264,16 +278,18 @@ namespace Valorant_Config_Customizer
             // 
             this.FoliQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.FoliQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FoliQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FoliQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoliQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.FoliQuaTxtbtn.Location = new System.Drawing.Point(363, 339);
+            this.FoliQuaTxtbtn.Location = new System.Drawing.Point(363, 338);
             this.FoliQuaTxtbtn.MaxLength = 1;
             this.FoliQuaTxtbtn.Name = "FoliQuaTxtbtn";
-            this.FoliQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.FoliQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.FoliQuaTxtbtn.TabIndex = 8;
             this.FoliQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FoliQuaTxtbtn.TextChanged += new System.EventHandler(this.FoliQuaTxtbtn_TextChanged);
+            this.FoliQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.FoliQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.FoliQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label8
             // 
@@ -290,16 +306,18 @@ namespace Valorant_Config_Customizer
             // 
             this.ShadingQuaTxtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.ShadingQuaTxtbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ShadingQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShadingQuaTxtbtn.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShadingQuaTxtbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.ShadingQuaTxtbtn.Location = new System.Drawing.Point(653, 339);
+            this.ShadingQuaTxtbtn.Location = new System.Drawing.Point(653, 338);
             this.ShadingQuaTxtbtn.MaxLength = 1;
             this.ShadingQuaTxtbtn.Name = "ShadingQuaTxtbtn";
-            this.ShadingQuaTxtbtn.Size = new System.Drawing.Size(92, 25);
+            this.ShadingQuaTxtbtn.Size = new System.Drawing.Size(92, 27);
             this.ShadingQuaTxtbtn.TabIndex = 9;
             this.ShadingQuaTxtbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ShadingQuaTxtbtn.TextChanged += new System.EventHandler(this.ShadingQuaTxtbtn_TextChanged);
+            this.ShadingQuaTxtbtn.Enter += new System.EventHandler(this.FocusedTxtBox_Enter);
             this.ShadingQuaTxtbtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZeroToThree_KeyPress);
+            this.ShadingQuaTxtbtn.Leave += new System.EventHandler(this.LeavedTxtBox_Leave);
             // 
             // label9
             // 
@@ -349,7 +367,7 @@ namespace Valorant_Config_Customizer
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(12)))), ((int)(((byte)(16)))));
             this.panel2.Controls.Add(this.InfoBtn);
             this.panel2.Controls.Add(this.miniBtn);
             this.panel2.Controls.Add(this.closeBtn);
@@ -490,6 +508,7 @@ namespace Valorant_Config_Customizer
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Valorant Config Customizer";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

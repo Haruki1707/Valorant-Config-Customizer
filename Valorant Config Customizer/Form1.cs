@@ -42,8 +42,6 @@ namespace Valorant_Config_Customizer
                     {
                         LastUser = line.Replace("LastKnownUser=", "");
                         ConfigPath = path + @"\" + LastUser + @"\Windows\";
-                        if (!File.Exists(ConfigPath + "GameUserSettings.ini"))
-                            ConfigPath = null;
                     }
                 }
 
@@ -162,9 +160,7 @@ namespace Valorant_Config_Customizer
         {
             e.Handled = true;
             if(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back))
-            {
                 e.Handled = false;
-            }
         }
 
         private void ZeroToThree_KeyPress(object sender, KeyPressEventArgs e)
@@ -172,10 +168,8 @@ namespace Valorant_Config_Customizer
             e.Handled = true;
             if (e.KeyChar == Convert.ToChar(Keys.Back))
                 e.Handled = false;
-            if (char.IsDigit(e.KeyChar) && char.GetNumericValue(e.KeyChar) < 4)
-            {
+            else if (char.IsDigit(e.KeyChar) && char.GetNumericValue(e.KeyChar) < 4)
                 e.Handled = false;
-            }
         }
 
         private void ZeroToTwo_KeyPress(object sender, KeyPressEventArgs e)
@@ -183,28 +177,26 @@ namespace Valorant_Config_Customizer
             e.Handled = true;
             if (e.KeyChar == Convert.ToChar(Keys.Back))
                 e.Handled = false;
-            if (char.IsDigit(e.KeyChar) && char.GetNumericValue(e.KeyChar) < 3)
-            {
+            else if (char.IsDigit(e.KeyChar) && char.GetNumericValue(e.KeyChar) < 3)
                 e.Handled = false;
-            }
+        }
+
+        private void FocusedTxtBox_Enter(object sender, EventArgs e)
+        {
+            Program.ToDraw((TextBox)sender, CreateGraphics(), 5);
+        }
+
+        private void LeavedTxtBox_Leave(object sender, EventArgs e)
+        {
+            Program.ToDraw((TextBox)sender, CreateGraphics(), 3, Color.FromArgb(22, 28, 38), 2);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            Program.ToDraw(this.Controls, e);
-        }
-
-        //Permite arrastrar el formulario
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void FormDisp_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            foreach (Control current in Controls)
+                if (current is TextBox)
+                    Program.ToDraw((TextBox)current, CreateGraphics(), 1);
         }
 
         private void miniBtn_Click(object sender, EventArgs e)
@@ -222,12 +214,14 @@ namespace Valorant_Config_Customizer
             var info = new MessageForm(message, 0);
             info.ShowDialog();
         }
+
         private DialogResult Error(string message)
         {
             var error = new MessageForm(message, 1);
             error.ShowDialog();
             return DialogResult.OK;
         }
+
         private DialogResult Success(string message, bool OK = false)
         {
             MessageForm success;
@@ -245,9 +239,27 @@ namespace Valorant_Config_Customizer
             System.Diagnostics.Process.Start("https://github.com/Haruki1707/Valorant-Config-Customizer/wiki/Resolution-Quality-1%25---100%25");
         }
 
+        //Permite arrastrar el formulario
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void FormDisp_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         private void InfoBtn_Click(object sender, EventArgs e)
         {
-            Info("Tested on: Valorant  V2.07\n\nDeveloped by: Haruki1707\nGitHub: github.com/Haruki1707");
+            Success("Tested on: Valorant  V2.07\n\nDeveloped by: Haruki1707\nGitHub: github.com/Haruki1707", true);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            linkLabel1.Focus();
         }
     }
 }
