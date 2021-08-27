@@ -132,6 +132,7 @@ namespace Valorant_Config_Customizer
             this.Controls.Add(this.Messagelbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MessageForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MessageForm";
             ((System.ComponentModel.ISupportInitialize)(this.iconPB)).EndInit();
