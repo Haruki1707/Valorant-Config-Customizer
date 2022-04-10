@@ -361,9 +361,9 @@ namespace Valorant_Config_Customizer
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(12, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(342, 18);
+            this.label10.Size = new System.Drawing.Size(344, 18);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Make sure the last Valorant user account is yours!";
+            this.label10.Text = "Make sure the last used Valorant account is yours!";
             // 
             // panel2
             // 
@@ -508,6 +508,7 @@ namespace Valorant_Config_Customizer
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Valorant Config Customizer";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.panel1.ResumeLayout(false);

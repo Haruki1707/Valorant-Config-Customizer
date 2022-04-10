@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EZ_Updater;
 
 namespace Valorant_Config_Customizer
 {
@@ -47,11 +48,37 @@ namespace Valorant_Config_Customizer
                     NObtn.Hide();
                     iconPB.Image = System.Drawing.SystemIcons.Information.ToBitmap();
                     break;
+                case 4:
+                    YESbtn.Hide();
+                    NObtn.Hide();
+                    OKbtn.Hide();
+                    iconPB.Hide();
+                    Messagelbl.Hide();
+                    progressBar1.Show();
+                    label1.Show();
+                    Updater.Update(UIChange);
+                    break;
                 default:
                     break;
             }
 
             Messagelbl.Text = Message;
+        }
+
+        private void UIChange(object sender, EventArgs e)
+        {
+            label1.Text = Updater.Message;
+            progressBar1.Value = Updater.ProgressPercentage;
+
+            switch (Updater.ShortState)
+            {
+                case UpdaterShortState.Canceled:
+                    OKbtn.Visible = true;
+                    break;
+                case UpdaterShortState.Installed:
+                    Application.Restart();
+                    break;
+            }
         }
 
         public DialogResult dialogResult = DialogResult.No;

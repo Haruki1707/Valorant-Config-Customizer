@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EZ_Updater;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,9 @@ namespace Valorant_Config_Customizer
                     if (line.Contains("LastKnownUser"))
                     {
                         LastUser = line.Replace("LastKnownUser=", "");
-                        ConfigPath = path + @"\" + LastUser + @"\Windows\";
+                        foreach (var dir in Directory.GetDirectories(path))
+                            if (dir.Contains(LastUser))
+                                ConfigPath = path + @"\" + new DirectoryInfo(dir).Name + @"\Windows\";
                     }
                 }
 
@@ -260,6 +263,23 @@ namespace Valorant_Config_Customizer
         private void Form1_Shown(object sender, EventArgs e)
         {
             linkLabel1.Focus();
+        }
+
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            Updater.GitHub_User = "Haruki1707";
+            Updater.GitHub_Repository = "Valorant-Config-Customizer";
+
+            if (await Updater.CheckUpdateAsync())
+                if (Updater.CannotWriteOnDir)
+                    MessageBox.Show("Application cannot update in current directory, consider moving it to another folder or executing with Admin rights", "Alert");
+                else
+                {
+                    new MessageForm("", 4)
+                    {
+                        Owner = this
+                    }.ShowDialog();
+                }
         }
     }
 }
